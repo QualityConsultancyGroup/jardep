@@ -54,6 +54,7 @@ public class Main
     {
         Main m = new Main();
         CmdlineParser cp = new CmdlineParser( m );
+        
         try {
             cp.parse( args );
         } catch (CmdlineParserException e) {

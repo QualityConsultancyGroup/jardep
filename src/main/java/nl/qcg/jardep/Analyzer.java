@@ -52,17 +52,6 @@ public class Analyzer
 
     private boolean reportNotFound = true;
 
-//    private String filter[] = {
-//        "java.", "sun.", "javax.", "javafx.", "com.sun.",
-//        //        "com.google.", "org.apache.", "org.python.",
-//        //        "org.antlr.", "org.stringtemplate.",
-//        //        "org.jdom2.",
-//        //        "org.w3c.",
-//        "org.xml.", //        "org.mortbay.",
-//    //        "org.jdesktop.",
-//    //        "freemarker."
-//    };
-
     private ArrayList<String> filter = new ArrayList<>();
 
     public Analyzer()
@@ -229,9 +218,9 @@ public class Analyzer
         }
 
         if( used.contains( className ) ) {
+            // shortcut
             return;
         }
-
         used.add( className );
 
         if( refs.containsKey( className ) ) {

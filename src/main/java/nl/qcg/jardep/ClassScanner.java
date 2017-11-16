@@ -91,10 +91,10 @@ public class ClassScanner
     @Override
     public MethodVisitor visitMethod( int access, String name, String desc, String signature, String[] exceptions )
     {
-        if( signature != null && signature.contains( "LogUtil" ) ) {
-//            Main.trace = true ;
-            getClass();
-        }
+//        if( signature != null && signature.contains( "LogUtil" ) ) {
+////            Main.trace = true ;
+//            getClass();
+//        }
         new SignatureScanner( refset ).parseMethod( desc );
         if( signature != null ) {
             new SignatureScanner( refset ).parseMethod( signature );

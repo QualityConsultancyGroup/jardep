@@ -34,7 +34,7 @@ public class AnnotationScanner
     @Override
     public AnnotationVisitor visitAnnotation( String name, String desc )
     {
-        return new AnnotationScanner(refset );
+        return new AnnotationScanner( refset );
     }
 
     @Override
@@ -63,13 +63,11 @@ public class AnnotationScanner
             refset.add( cn );
 
             //LOG.log( Level.INFO, "{0} {1}", new Object[]{name, cn, value.getClass()} );
-
 //            super.visit( name, value );
             return;
         }
 
 //        LOG.log( Level.INFO, "{0} {1}", new Object[]{name, value.getClass()} );
-
 //        super.visit( name, value );
     }
 
