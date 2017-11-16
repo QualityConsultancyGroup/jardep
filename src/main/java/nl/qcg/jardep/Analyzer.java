@@ -50,7 +50,7 @@ public class Analyzer
 
     private boolean reportUnused = true;
 
-    private boolean repotNotFound = true;
+    private boolean reportNotFound = true;
 
 //    private String filter[] = {
 //        "java.", "sun.", "javax.", "javafx.", "com.sun.",
@@ -86,7 +86,7 @@ public class Analyzer
 
     public void setReportNotFound( boolean repotNotFound )
     {
-        this.repotNotFound = repotNotFound;
+        this.reportNotFound = repotNotFound;
     }
 
     public void addJar( String file )
@@ -136,7 +136,7 @@ public class Analyzer
         if( reportUnused ) {
             writeReportUnused();
         }
-        if( repotNotFound ) {
+        if( reportNotFound ) {
             writeReportNotFound();
         }
 
