@@ -17,4 +17,4 @@ Reports used and used classnames in test.jar when called from nl.qcg.test.Main
     -j filename     jar filename        ex: -j ../file.jar
     -unused         report unused
     -used           report used
-    -problems       report problems
+    -notfound       report notfound
