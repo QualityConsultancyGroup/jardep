@@ -84,9 +84,9 @@ public class Analyzer
         this.reportUnused = reportUnused;
     }
 
-    public void setReportNotFound( boolean repotNotFound )
+    public void setReportNotFound( boolean reportNotFound )
     {
-        this.reportNotFound = repotNotFound;
+        this.reportNotFound = reportNotFound;
     }
 
     public void addJar( String file )

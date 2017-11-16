@@ -18,3 +18,12 @@ Reports used and used classnames in test.jar when called from nl.qcg.test.Main
     -unused         report unused
     -used           report used
     -notfound       report notfound
+    @config.txt     use options file
+
+In the options file, every option needs to be on a separate line. Per example:
+
+    -x
+    org.
+    -x
+    com.
+
