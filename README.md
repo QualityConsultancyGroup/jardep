@@ -1,8 +1,13 @@
 # jardep
-jar dependency scanner
 
-A quick and VERY dirty jar dependency scanner.
+A jar dependency scanner.
+It makes a static analysis.
 
-NO WARRANTIES OF ANY KIND!
+Examples:
+
+    java -jar jardep.jar -j test.jar -e nl.qcg.test.Main -unused -used
+
+Reports used and used classnames in test.jar when called from nl.qcg.test.Main
+
 
 
