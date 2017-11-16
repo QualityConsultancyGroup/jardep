@@ -5,7 +5,7 @@
  *
  */
 
-package nl.qcg.analyzer;
+package nl.qcg.jardep;
 
 import java.io.IOException;
 import java.io.InputStream;
