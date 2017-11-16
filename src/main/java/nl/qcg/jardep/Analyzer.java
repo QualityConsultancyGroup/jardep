@@ -84,7 +84,7 @@ public class Analyzer
         this.reportUnused = reportUnused;
     }
 
-    public void setRepotNotFound( boolean repotNotFound )
+    public void setReportNotFound( boolean repotNotFound )
     {
         this.repotNotFound = repotNotFound;
     }

@@ -12,5 +12,9 @@ Reports used and used classnames in test.jar when called from nl.qcg.test.Main
 
 ## Options
 
-    -x exclude package ex: java.
-    -e entrypoint ex: nl.qcg.test.Main
+    -x prefix       exclude package     ex: -x org.
+    -e classname    entrypoint          ex: -e nl.qcg.test.Main
+    -j filename     jar filename        ex: -j ../file.jar
+    -unused         report unused
+    -used           report used
+    -problems       report problems

@@ -26,6 +26,10 @@ public class Main
     @SuppressWarnings("FieldMayBeFinal")
     private boolean reportUnused;
 
+    @CmdOption(names = {"-notfound"}, description = "report not found")
+    @SuppressWarnings("FieldMayBeFinal")
+    private boolean reportNotfound;
+
     @CmdOption(names = {"-used"}, description = "report used")
     @SuppressWarnings("FieldMayBeFinal")
     private boolean reportUsed;
@@ -88,8 +92,7 @@ public class Main
 
         an.setReportUnused( reportUnused );
         an.setReportUsed( reportUsed );
-
-        an.setRepotNotFound( false);
+        an.setReportNotFound( reportNotfound );
 
         an.run();
     }
