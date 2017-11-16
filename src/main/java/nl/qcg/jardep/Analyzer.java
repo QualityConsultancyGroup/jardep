@@ -52,8 +52,26 @@ public class Analyzer
 
     private boolean repotNotFound = true;
 
+//    private String filter[] = {
+//        "java.", "sun.", "javax.", "javafx.", "com.sun.",
+//        //        "com.google.", "org.apache.", "org.python.",
+//        //        "org.antlr.", "org.stringtemplate.",
+//        //        "org.jdom2.",
+//        //        "org.w3c.",
+//        "org.xml.", //        "org.mortbay.",
+//    //        "org.jdesktop.",
+//    //        "freemarker."
+//    };
+
+    private ArrayList<String> filter = new ArrayList<>();
+
     public Analyzer()
     {
+        filter.add(  "java.");
+        filter.add(  "sun.");
+        filter.add(  "javax.");
+        filter.add(  "javafx.");
+        filter.add(  "com.sun.");
     }
 
     public void setReportUsed( boolean reportUsed )
@@ -76,9 +94,24 @@ public class Analyzer
         jars.add( file );
     }
 
+    public void addPackageFilter( String pkg )
+    {
+        filter.add( pkg );
+    }
+
     public void addEntryPoint( String className )
     {
         queueClass( className );
+    }
+
+    public ArrayList<String> getFilter()
+    {
+        return filter;
+    }
+
+    public void setFilter( ArrayList<String> filter )
+    {
+        this.filter = filter;
     }
 
     public void run()
@@ -150,17 +183,6 @@ public class Analyzer
             pw.println( s );
         }
     }
-
-    private String filter[] = {
-        "java.", "sun.", "javax.", "javafx.", "com.sun.",
-        //        "com.google.", "org.apache.", "org.python.",
-        //        "org.antlr.", "org.stringtemplate.",
-        //        "org.jdom2.",
-        //        "org.w3c.",
-        "org.xml.", //        "org.mortbay.",
-    //        "org.jdesktop.",
-    //        "freemarker."
-    };
 
     private boolean scannableClass( String name )
     {
