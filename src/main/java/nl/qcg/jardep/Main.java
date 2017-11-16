@@ -18,6 +18,11 @@ import java.util.ArrayList;
  */
 public class Main
 {
+
+    @CmdOption(names = {"--help", "-h"}, description = "Show this help", isHelp = true)
+    @SuppressWarnings("FieldMayBeFinal")
+    private boolean help;
+
     @CmdOption(names = {"-v"}, description = "run verbose")
     @SuppressWarnings("FieldMayBeFinal")
     private boolean verbose;
@@ -46,15 +51,15 @@ public class Main
     @SuppressWarnings("FieldMayBeFinal")
     private ArrayList<String> jars = new ArrayList<>();
 
-
     /**
      * @param args the command line arguments
      */
-    public static void main( String[] args ) throws Exception
+    public static void main( String[] args )
+        throws Exception
     {
         Main m = new Main();
         CmdlineParser cp = new CmdlineParser( m );
-        
+
         try {
             cp.parse( args );
         } catch (CmdlineParserException e) {
@@ -63,22 +68,28 @@ public class Main
             System.exit( 1 );
         }
 
+        if( m.help ) {
+            cp.usage();
+            System.exit( 0 );
+        }
+
         m.run();
     }
 
-    private void run() throws Exception
+    private void run()
+        throws Exception
     {
         final Analyzer an = new Analyzer();
 
         for( String j : jars ) {
             if( verbose ) {
-                System.out.println( "jar: "+j );
+                System.out.println( "jar: " + j );
             }
             an.addJar( j );
         }
         for( String e : entrypoints ) {
             if( verbose ) {
-                System.out.println( "entrypoint: "+e );
+                System.out.println( "entrypoint: " + e );
             }
             an.addEntryPoint( e );
         }
@@ -87,7 +98,7 @@ public class Main
         }
         if( verbose ) {
             for( String f : an.getFilter() ) {
-                System.out.println( "exclude: "+f );
+                System.out.println( "exclude: " + f );
             }
         }
 

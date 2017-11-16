@@ -6,7 +6,7 @@ It makes a static analysis of the jars with compiled classes.
 
 Examples:
 
-    java -jar jardep.jar -j test.jar -e nl.qcg.test.Main -unused -used
+    java -jar target/jardep-1.0-SNAPSHOT.jar -j test.jar -e nl.qcg.test.Main -unused -used
 
 Reports used and used classnames in test.jar when called from nl.qcg.test.Main
 
