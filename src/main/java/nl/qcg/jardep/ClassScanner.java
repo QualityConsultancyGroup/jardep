@@ -116,7 +116,7 @@ public class ClassScanner
 
     /**
      * Scan the constantpool.
-     * There is no support for scanning the constantpool in org.ow2.asm.
+     * There is no visitor support for visiting the constantpool in org.ow2.asm.
      */
     void postProcess( ClassReader cr )
     {
