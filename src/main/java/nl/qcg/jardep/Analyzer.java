@@ -32,12 +32,24 @@ public class Analyzer
 
     private static final Logger LOG = Logger.getLogger( Analyzer.class.getName() );
 
+    /**
+     * All jars to be scanned.
+     */
     private final ArrayList<String> jars = new ArrayList<>();
 
+    /**
+     * All available classnames in specified jars.
+     */
     private final HashSet<String> avail = new HashSet<>();
 
+    /**
+     * All classnames not found.
+     */
     private final HashSet<String> notfound = new HashSet<>();
 
+    /**
+     * All classnames in use.
+     */
     private final HashSet<String> used = new HashSet<>();
 
     private final HashSet<String> alreadyScanned = new HashSet<>();
@@ -52,10 +64,14 @@ public class Analyzer
 
     private boolean reportNotFound = true;
 
+    /**
+     * Exclude reporting on this filter prefixes.
+     */
     private ArrayList<String> filter = new ArrayList<>();
 
     public Analyzer()
     {
+        // set rt.jar exclude prefixes.
         filter.add(  "java.");
         filter.add(  "sun.");
         filter.add(  "javax.");
