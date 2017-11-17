@@ -114,6 +114,10 @@ public class ClassScanner
         return new FieldScanner( refset );
     }
 
+    /**
+     * Scan the constantpool.
+     * There is no support for scanning the constantpool in org.ow2.asm.
+     */
     void postProcess( ClassReader cr )
     {
         int cnt = cr.getItemCount();
