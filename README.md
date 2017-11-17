@@ -19,8 +19,9 @@ Reports used and used classnames in test.jar when called from nl.qcg.test.Main
     -used           report used
     -notfound       report notfound
     @config.txt     use options file
+    -v              verbose output
 
-In the options file, every option needs to be on a separate line. Per example:
+In the options file, every option needs to be on a separate line. For example:
 
     -x
     org.
